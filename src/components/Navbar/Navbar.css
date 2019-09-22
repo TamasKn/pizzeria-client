@@ -1,0 +1,7 @@
+.navbar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    background-color: rgba(25, 72, 255, 0.08);
+}
+
