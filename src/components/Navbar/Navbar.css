@@ -1,7 +1,35 @@
 .navbar {
     position: relative;
+    height: 70px;
+    width: 100%;
     z-index: 1;
     display: flex;
-    background-color: rgba(25, 72, 255, 0.08);
+    background-color: rgba(201, 218, 255, 0.9);
 }
+
+.nav-title {
+    width: 200px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #1d1d1d;
+    margin: 10px 0 10px 20px;
+}
+
+.nav-links {
+    margin: 15px 0 10px 70%;
+}
+
+.nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    color: #1d1d1d;
+    margin-right: 30px;
+}
+
+.sticked {
+    position: fixed;
+    top: 0;
+}
+
+
 

@@ -1,0 +1,13 @@
+.legends {
+    display: flex;
+}
+
+.legends p {
+    margin: 15px 15px 0 5px;
+}
+
+.food-type-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 12px;
+}

@@ -9,18 +9,22 @@ const MenuItem = ({id, description, name, price, spicy, veg}) => {
     const [globalState, globalActions] = useGlobal()
 
     return(
-        <div>
-            <h1>{name}</h1>
-            <h2>{description}</h2>
-            <h3>{price} Ft</h3>
-            <p>{id}</p>
-            {(spicy === 1) ? <img className='food-type-icon' src={spicyIcon} alt="Csipos"/> : null}
-            {(veg === 1) ? <img className='food-type-icon' src={vegaIcon} alt="Vegetarianus"/> : null}
-            {
-                (globalState.total + price <= 20000)
-                    ? <button onClick={() => globalActions.addItemToCart(name, price)} >Rendeles</button>
-                    : <button disabled='true' >Rendeles</button>
-            }
+        <div className='listing-container'>
+            <p className='food-name'>{name}
+                {(spicy === 1) ? <img className='food-type-icon' src={spicyIcon} alt="Csipos"/> : null}
+                {(veg === 1) ? <img className='food-type-icon' src={vegaIcon} alt="Vegetarianus"/> : null}
+            </p>
+            <div className='food-info'>
+                <p className='food-description'>{description}</p>
+                <p className='food-price'>{price} Ft</p>
+
+                {
+                    (globalState.total + price <= 20000)
+                        ? <div className='order-button' onClick={() => globalActions.addItemToCart(name, price)} >Kosarba</div>
+                        : <div className='order-button-disabled' >Kosarba</div>
+                }
+            </div>
+
 
         </div>
     )

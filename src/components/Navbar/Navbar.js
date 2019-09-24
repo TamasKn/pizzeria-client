@@ -4,13 +4,21 @@ import {Link} from "react-router-dom";
 
 import CartMenu from "../CartMenu/CartMenu";
 
-const Navbar = () => {
-    return(
-        <div className='navbar'>
-            <Link to='/'>Trattoria di Napoli</Link>
-            <Link to='#'> Belepes </Link>
 
-            <CartMenu/>
+const Navbar = () => {
+
+    return(
+        <div className='navbar sticked'>
+            <Link className='nav-title' to='/'>Trattoria di Napoli</Link>
+
+            <div className='nav-links'>
+                <Link className='nav-link' to='#'>Rolunk</Link>
+                <Link className='nav-link' to='#'>Belepes</Link>
+                <CartMenu />
+            </div>
+
+
+
 
         </div>
     )

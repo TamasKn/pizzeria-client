@@ -24,7 +24,7 @@ const Category = ({props, menu}) => {
     }
 
     return(
-        <div>
+        <div >
             <Navbar/>
             {
                 matches.map(({id, description, name, price, spicy, vegatarian}) =>
@@ -38,8 +38,7 @@ const Category = ({props, menu}) => {
                     />
                 )
             }
-            <div>
-                <h5>Jelmagyarazat</h5>
+            <div className='legends'>
                 <img className='food-type-icon' src={spicyIcon} /> <p>Csipos</p>
                 <img className='food-type-icon' src={vegaIcon} /> <p>Vegetarianus</p>
             </div>

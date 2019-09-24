@@ -2,12 +2,19 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import './Section.css'
 
-import Category from "../Category/Category";
-
-const Section = ({name, category}) => {
+const Section = ({name, category, image}) => {
     return (
-        <div>
-            <Link to={`/menu/${category}`} >{name}</Link>
+        <div className='menu-section'>
+            <img className='background-image' src={image} />
+
+
+            <div className='content'>
+                <Link className='title' to={`/menu/${category}`} >{name}
+
+                </Link>
+            </div>
+
+
         </div>
     )
 }

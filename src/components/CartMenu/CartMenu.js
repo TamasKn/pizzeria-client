@@ -1,6 +1,9 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './CartMenu.css'
-import cartIcon from '../../static/shopping-cart.svg'
+import cartIcon from '../../static/scooter.svg'
+import addIcon from '../../static/add.svg'
+import removeIcon from '../../static/remove.svg'
+import deleteIcon from '../../static/delete.svg'
 import {useGlobal} from '../../reducer/CartReducer'
 import {Link} from "react-router-dom";
 
@@ -11,42 +14,57 @@ const CartMenu = () => {
 
     return(
         <div className="dropdown">
+
+
             <img className='cart-icon' src={cartIcon} />
+            <span className='cart-counter' >{globalState.cartItems.length}</span>
+
             <div className="dropdown-content">
                 {
                     (globalState.cartItems.length !== 0)
                         ?
                             globalState.cartItems.map( item =>
-                                <div>
-                                    <p>{item.name}</p>
-                                    <p>{item.qty}</p>
+                                <div className='cart-item'>
+                                    <p className='cart-item-name'>{item.name}</p>
                                     {
                                         (item.qty > 1)
                                             ?
-                                                <span onClick={() => globalActions.decreaseQty(item.name)} > - </span>
+                                            <img className='operator-icon'
+                                                 src={removeIcon}
+                                                 onClick={() => globalActions.decreaseQty(item.name)} >
+
+                                            </img>
                                             :   null
                                     }
+                                    <p>{item.qty} db</p>
+
                                     {
                                         (globalState.total + item.price <= 20000)
-                                            ? <span onClick={() => globalActions.increaseQty(item.name)} > + </span>
+                                            ? <img className='operator-icon' src={addIcon}
+                                                   onClick={() => globalActions.increaseQty(item.name)} >
+
+                                            </img>
                                             : null
                                     }
 
-                                    <p>{item.price * item.qty}</p>
-                                    <button onClick={() => globalActions.removeItemFromCart(item.name)}>Torles</button>
+                                    <p className='cart-item-price' >{item.price * item.qty} Ft</p>
+                                    <img className='operator-icon'
+                                          src={deleteIcon}
+                                          onClick={() => globalActions.removeItemFromCart(item.name)}>
+                                    </img>
                                 </div>
                             )
                         :
-                            <p>A kosar ures</p>
+                            <p className='cart-spacing' >A kosar ures</p>
                 }
 
-                <p>Vegosszeg: {globalState.total}</p>
+                <p className='cart-spacing' >Vegosszeg: <span className='cart-item-name' >{globalState.total} Ft</span> </p>
                 {
                     (globalState.total >= 20000)
                         ? <p>Maximum 20.000Ft ertekben rendelhet</p>
                         : null
                 }
-                <Link to='/fizetes'>Fizet</Link>
+                <div className='cart-checkout'><Link to='/fizetes'>Fizetes</Link></div>
 
 
             </div>
