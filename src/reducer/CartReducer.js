@@ -1,6 +1,5 @@
-import globalHook from "use-global-hook";
-import React from "react";
-
+import React from 'react'
+import globalHook from 'use-global-hook'
 
 /**
  Instead of Redux I implemented a more lightweight state management based on Context API. It requires less setup
@@ -13,8 +12,6 @@ const initialState = {
 }
 
 
-
-
 const actions = {
 
     // Add food item to cart if not exist, otherwise modify the existing one
@@ -25,7 +22,6 @@ const actions = {
 
         if(idx !== -1){
 
-            //const incPrice = state[idx].price + price
             const incQty = state[idx].qty + 1
 
             state.splice(idx, 1,{name: name, qty: incQty, price: price})

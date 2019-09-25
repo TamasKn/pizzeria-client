@@ -39,8 +39,8 @@ const Category = ({props, menu}) => {
                 )
             }
             <div className='legends'>
-                <img className='food-type-icon' src={spicyIcon} /> <p>Csipos</p>
-                <img className='food-type-icon' src={vegaIcon} /> <p>Vegetarianus</p>
+                <img className='food-type-icon' src={spicyIcon} alt='Csípős' /> <p>Csípős</p>
+                <img className='food-type-icon' src={vegaIcon} alt='Vegatariánus' /> <p>Vegetariánus</p>
             </div>
         </div>
     )

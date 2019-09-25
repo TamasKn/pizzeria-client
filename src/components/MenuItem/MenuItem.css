@@ -30,19 +30,24 @@
     position: absolute;
     width: 5vw;
     text-align: center;
-    cursor: pointer;
     line-height: 50px;
     padding: 5px 5px 5px 5px;
     left: 34vw;
     border: 1px #d4d4d4 solid;
-    background-color: rgba(201, 218, 255, 0.3)
+
 }
 
-.order-button:hover {
+.active:hover {
     background-color: rgba(201, 218, 255, 0.9)
 }
 
-.order-button-disabled {
+.active {
+    cursor: pointer;
+    background-color: rgba(201, 218, 255, 0.3)
+}
+
+.disabled {
+    cursor: default;
     color: gray;
 }
 

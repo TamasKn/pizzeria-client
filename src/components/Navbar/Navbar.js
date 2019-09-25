@@ -12,8 +12,8 @@ const Navbar = () => {
             <Link className='nav-title' to='/'>Trattoria di Napoli</Link>
 
             <div className='nav-links'>
-                <Link className='nav-link' to='#'>Rolunk</Link>
-                <Link className='nav-link' to='#'>Belepes</Link>
+                <Link className='nav-link' to='#'>Rólunk</Link>
+                <Link className='nav-link' to='#'>Belépes</Link>
                 <CartMenu />
             </div>
 

@@ -15,7 +15,7 @@ const Homepage = () => {
             <Navbar />
 
             <div id="title">
-                <img src={logo}/>
+                <img src={logo} alt='Logo'/>
             </div>
 
             <div>

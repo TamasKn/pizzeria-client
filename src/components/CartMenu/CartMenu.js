@@ -16,7 +16,7 @@ const CartMenu = () => {
         <div className="dropdown">
 
 
-            <img className='cart-icon' src={cartIcon} />
+            <img className='cart-icon' src={cartIcon} alt='Futár ikon' />
             <span className='cart-counter' >{globalState.cartItems.length}</span>
 
             <div className="dropdown-content">
@@ -31,6 +31,7 @@ const CartMenu = () => {
                                             ?
                                             <img className='operator-icon'
                                                  src={removeIcon}
+                                                 alt='Mennyiség csökkentése'
                                                  onClick={() => globalActions.decreaseQty(item.name)} >
 
                                             </img>
@@ -40,7 +41,7 @@ const CartMenu = () => {
 
                                     {
                                         (globalState.total + item.price <= 20000)
-                                            ? <img className='operator-icon' src={addIcon}
+                                            ? <img className='operator-icon' src={addIcon} alt='Mennyiség növelése'
                                                    onClick={() => globalActions.increaseQty(item.name)} >
 
                                             </img>
@@ -50,21 +51,22 @@ const CartMenu = () => {
                                     <p className='cart-item-price' >{item.price * item.qty} Ft</p>
                                     <img className='operator-icon'
                                           src={deleteIcon}
+                                         alt='Tétel törlése'
                                           onClick={() => globalActions.removeItemFromCart(item.name)}>
                                     </img>
                                 </div>
                             )
                         :
-                            <p className='cart-spacing' >A kosar ures</p>
+                            <p className='cart-spacing' >A kosár üres</p>
                 }
 
-                <p className='cart-spacing' >Vegosszeg: <span className='cart-item-name' >{globalState.total} Ft</span> </p>
+                <p className='cart-spacing' >Végösszeg: <span className='cart-item-name' >{globalState.total} Ft</span> </p>
                 {
                     (globalState.total >= 20000)
-                        ? <p>Maximum 20.000Ft ertekben rendelhet</p>
+                        ? <p>Maximum 20.000Ft értékben rendelhet</p>
                         : null
                 }
-                <div className='cart-checkout'><Link to='/fizetes'>Fizetes</Link></div>
+                <div className='cart-checkout'><Link to='#'>Rendelés leadása</Link></div>
 
 
             </div>

@@ -11,8 +11,8 @@ const MenuItem = ({id, description, name, price, spicy, veg}) => {
     return(
         <div className='listing-container'>
             <p className='food-name'>{name}
-                {(spicy === 1) ? <img className='food-type-icon' src={spicyIcon} alt="Csipos"/> : null}
-                {(veg === 1) ? <img className='food-type-icon' src={vegaIcon} alt="Vegetarianus"/> : null}
+                {(spicy === 1) ? <img className='food-type-icon' src={spicyIcon} alt="Csipős"/> : null}
+                {(veg === 1) ? <img className='food-type-icon' src={vegaIcon} alt="Vegetariánus"/> : null}
             </p>
             <div className='food-info'>
                 <p className='food-description'>{description}</p>
@@ -20,8 +20,8 @@ const MenuItem = ({id, description, name, price, spicy, veg}) => {
 
                 {
                     (globalState.total + price <= 20000)
-                        ? <div className='order-button' onClick={() => globalActions.addItemToCart(name, price)} >Kosarba</div>
-                        : <div className='order-button-disabled' >Kosarba</div>
+                        ? <div className='order-button active' onClick={() => globalActions.addItemToCart(name, price)} >Kosárba</div>
+                        : <div className='order-button disabled' >Kosárba</div>
                 }
             </div>
 

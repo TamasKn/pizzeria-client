@@ -5,7 +5,7 @@ import './Section.css'
 const Section = ({name, category, image}) => {
     return (
         <div className='menu-section'>
-            <img className='background-image' src={image} />
+            <img className='background-image' src={image} alt='Étel kategória képe' />
 
 
             <div className='content'>
